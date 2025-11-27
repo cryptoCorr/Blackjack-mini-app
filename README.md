@@ -1,5 +1,4 @@
 # Blackjack-mini-app
-Kral Şengül, [27.11.2025 10:16]
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 // Base Mini App SDK import edildi (Projeye npm ile yüklenmesi gerekir)
 // BaseApp ortamında SDK global olarak sağlanmazsa bu import hata verecektir, 
@@ -104,7 +103,6 @@ const App = () => {
     useEffect(() => {
         // SDK'nın varlığını kontrol et
 
-Kral Şengül, [27.11.2025 10:16]
 if (typeof SDK !== 'undefined' && SDK.Actions && SDK.Actions.ready) {
             // Hiçbir yükleme mantığı olmadığı için doğrudan hazır (ready) çağırılabilir.
             SDK.Actions.ready();
@@ -220,9 +218,8 @@ if (typeof SDK !== 'undefined' && SDK.Actions && SDK.Actions.ready) {
 
         const newCard = drawCard();
         const newHand = [...playerHand, newCard];
-        setPlayerHand(newHand);
-
-Kral Şengül, [27.11.2025 10:16]
+        setPlayerHand(newHand)
+        
 const newValue = calculateHandValue(newHand);
         if (newValue > 21) {
              // Bust
@@ -345,7 +342,6 @@ const newValue = calculateHandValue(newHand);
         </div>
     );
 
-Kral Şengül, [27.11.2025 10:16]
 // Ana Aksiyon Butonu
     const ActionButton = ({ onClick, text, disabled = false, className = '' }) => (
         <button
@@ -427,7 +423,6 @@ Kral Şengül, [27.11.2025 10:16]
                         Krupiye ({gameState === 'RESULT' ? dealerValue : dealerVisibleValue})
                         <span className="text-sm text-gray-400">{gameState !== 'RESULT' && dealerHand.length > 0 && Görünür: ${dealerVisibleValue}}</span>
 
-Kral Şengül, [27.11.2025 10:16]
 </h2>
                     {renderDealerHand()}
                 </section>
